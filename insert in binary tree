@@ -1,0 +1,47 @@
+public class Main
+{
+	public static void main(String[] args) {
+	new Main().run();
+	}
+	static class Node{
+	    Node left;
+	    Node right;
+	    int value;
+	    public Node(int value){
+	        this.value=value;
+	    }
+	}
+	public void run(){
+	    Node root=new Node(25);
+	     System.out.println("root"+root.value);
+	     
+	     insert(root,11);
+	      insert(root,15);
+	       insert(root,16);
+	        insert(root,23);
+	         insert(root,79);
+	     
+	}
+	public void insert(Node node,int value){
+	    if(value<node.value){
+	        if(node.left!=null){
+	            insert(node.left,value);
+	        }
+	        else{
+	            System.out.println("inserted"+value+" to left"+node.value);
+	            node.left=new Node(value);
+	        }
+	    }
+	    else if(value>node.value){
+	        
+	        if(node.right!=null){
+	            insert(node.right,value);
+	        }
+	        else{
+	            System.out.println("inserted"+value+" to right"+node.value);
+	            node.right=new Node(value);
+	        }
+	        
+	    }
+	}
+}

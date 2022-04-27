@@ -1,0 +1,23 @@
+public void search (String value){
+    Queue<Node> queue=new LinkedList<Node>();
+    queue.add(root);
+    while(!queue.isEmpty()){
+        Node present=queue.remove();
+        if(present.value==value){
+            System.out.println("the value-"+value);
+            return;
+        }
+        else{
+            if(present.left!=null){
+                queue.add(present.left);
+                
+            }
+             if(present.right!=null){
+                queue.add(present.right);
+                
+            }
+        }
+    }
+    System.out.println("not found");
+}
+}
